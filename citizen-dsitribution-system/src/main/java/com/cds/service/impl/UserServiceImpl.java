@@ -3,6 +3,7 @@ package com.cds.service.impl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,8 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 
-	public List<User> getUsers() {
-		return repository.findAll();
+	@Override
+	public List<User> getUsers(BigDecimal min, BigDecimal max) {
+		return repository.findUsers(min, max);
 	}
 }

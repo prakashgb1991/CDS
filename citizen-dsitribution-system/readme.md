@@ -26,3 +26,41 @@ use docker command : docker run prakashgb1991/citizen-distribution-system
 ## JUnit result
 
 ![alt text](https://github.com/prakashgb1991/CDS/blob/master/2020-07-01_14h57_54.png)
+
+# REST API
+
+The REST API to the example app is described below.
+
+## Get list of Users
+
+### Request
+
+`GET /users/`
+
+**URL Params**
+
+**Optional:**
+
+`min=[decimal]`
+
+`max=[decimal]`
+
+### Response
+
+[{"id":1,"userName":"CONE_NT_0001","salary":22.33,"updatedDate":"2020-07-01T08:01:43.540+0000","status":"A"}]
+
+## upload users
+
+### Request
+
+`POST /users/upload`
+
+**Data Params**
+
+`file=[csv file]`
+
+### Response
+
+{
+    "message": "Uploaded the file successfully: user.csv"
+}

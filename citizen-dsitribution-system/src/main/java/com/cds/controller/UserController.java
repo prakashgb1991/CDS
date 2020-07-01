@@ -2,6 +2,7 @@ package com.cds.controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -10,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,12 +57,13 @@ public class UserController {
 		message = "Please upload a csv file!";
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
 	}
-	
 
 	@GetMapping("/")
-	public ResponseEntity<List<User>> getUsers() {
+	public ResponseEntity<List<User>> getUsers(
+			@RequestParam(value = "min", required = false, defaultValue = "0") BigDecimal min,
+			@RequestParam(value = "max", required = false, defaultValue = "4000") BigDecimal max) {
 		try {
-			List<User> tutorials = userService.getUsers();
+			List<User> tutorials = userService.getUsers(min, max);
 
 			if (tutorials.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -70,5 +74,6 @@ public class UserController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
 
 }

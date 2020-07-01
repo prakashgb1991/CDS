@@ -28,6 +28,6 @@ public class UserRepositoryTest {
 
 	@Test
 	public void testRepositoryGet() {
-		Assert.assertNotNull(repository.findUsers());
+		Assert.assertNotNull(repository.findUsers(new BigDecimal(0),new BigDecimal(20)));
 	}
 }
