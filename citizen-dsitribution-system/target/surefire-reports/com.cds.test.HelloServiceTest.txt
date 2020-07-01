@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.cds.test.HelloServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.221 s <<< FAILURE! - in com.cds.test.HelloServiceTest
+firstUploadWordsTest(com.cds.test.HelloServiceTest)  Time elapsed: 0.066 s  <<< ERROR!
+java.lang.IllegalArgumentException: WebApplicationContext is required
+	at com.cds.test.HelloServiceTest.firstUploadWordsTest(HelloServiceTest.java:50)
+
+getUsers(com.cds.test.HelloServiceTest)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.cds.test.HelloServiceTest.getUsers(HelloServiceTest.java:39)
+

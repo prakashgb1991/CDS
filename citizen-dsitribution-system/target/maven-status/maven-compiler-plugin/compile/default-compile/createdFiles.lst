@@ -1,5 +1,5 @@
-com\cds\service\CSVService.class
-com\cds\service\UserRepository.class
+com\cds\repository\UserRepository.class
+com\cds\service\UserService.class
 com\cds\CDSServiceApplication.class
 com\cds\util\CSVHelper.class
 com\cds\exceptionHandling\FileUploadExceptionAdvice.class
