@@ -25,4 +25,4 @@ use docker command : docker run prakashgb1991/citizen-distribution-system
 
 ## JUnit result
 
-![alt text](https://github.com/prakashgb1991/cds/blob/master/2020-07-01_14h57_54.png)
+![alt text](https://github.com/prakashgb1991/CDS/blob/master/2020-07-01_14h57_54.png)
